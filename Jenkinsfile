@@ -32,7 +32,7 @@ pipeline {
 
         stage('Deploy to EKS') {
             steps {
-                sh 'awa eks --region us-east-1 update-kubeconfig --name trend-cluster'
+                sh 'aws eks --region us-east-1 update-kubeconfig --name trend-cluster'
                 sh 'kubeeti apply -f deployment.yaml'
                 sh 'kubeeti apply -f service.yaml'
                 sh 'kubeeti get svc'
