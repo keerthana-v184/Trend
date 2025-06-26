@@ -25,7 +25,8 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('', DOCKER_CREDENTIALS_ID) {
-                        docker.image("${DOCKER_IMAGE}").push('latest')
+                        docker.image("${DOCKER_IMAGE}").tag('v1')
+                        docker.image("${DOCKER_IMAGE}:v1").push()
                     }
                 }
             }
