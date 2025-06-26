@@ -8,5 +8,4 @@ dist/
 .terraform/
 .vscode/
 *.DS_Store
-Jenkinsfile
 
